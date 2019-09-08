@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Crimson+Pro:200,200i,400,400i,900,900i&display=swap"
+      rel="stylesheet"
+    />
+    <title>{{ site.title }}</title>
+  </head>
+  <body class="mw9 center">
+    {% include header.html %}
+
+    <div class="content">{{ page.content }}</div>
+    {% include footer.html %}
+  </body>
+</html>

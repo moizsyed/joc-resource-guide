@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"style.scss"
+	],
+	"sourcesContent": [
+		"$font-stack: \"Crimson Pro\", serif;\n$primary-color: #333;\nbody {\n  font: 100% $font-stack;\n  color: $primary-color;\n}\n"
+	],
+	"names": [],
+	"mappings": "AAEA,AAAA,IAAI,AAAC,CACH,IAAI,CAAE,IAAI,CAHC,aAAa,CAAE,KAAK,CAI/B,KAAK,CAHS,IAAI,CAInB"
+}

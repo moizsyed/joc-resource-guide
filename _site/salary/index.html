@@ -8,13 +8,33 @@
       rel="stylesheet"
       href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
     />
-    <title>{{ site.title }}</title>
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Crimson+Pro:200,200i,400,400i,900,900i&display=swap"
+      rel="stylesheet"
+    />
+    <title>The Journalists of Color Resource Guide</title>
   </head>
-  <body class="mw8 center sans-serif">
-    <h1>{{ site.title }}</h1>
-    <h3>{{ site.description }}</h3>
+  <body class="mw9 center">
+    <nav>
+    <a href="/career/" />Career Growth</a> •
+    <a href="/salary/" />Salary & Benefits</a> •
+    <a href="/accountability/" />Holding Institutions Accountable</a> •
+    <a href="/training/" />Training</a> •
+    <a href="/about/" />About</a> •
+  </nav>
+<h1>The Journalists of Color Resource Guide</h1>
+<h3>A compilation of resources for journalists looking to level up their career and the newsrooms they work in</h3>
 
+    <h4>Salary & Benefits</h4>
+    <p><p>Have you ever found yourself wondering whether you’re asking for too much money? Or not enough? What about benefits… would it be too much to ask for… uhm… health insurance? (No! Keep asking!) If you want to find salary data (including some breakdowns by race) and learn about some good negotiation tactics, the resources below can help!</p>
+</p>
     <div class="data-table mt5"></div>
+    <h1>FOOTER</h1>
+
   </body>
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
@@ -33,8 +53,11 @@
 
     function showInfo(data, tabletop) {
       console.log("data", data);
+      var filtered_data = data.filter(
+        d => d.category == "salary"
+      );
       var dataTable = d3.select(".data-table");
-      data.map(function(d) {
+      filtered_data.map(function(d) {
         var dataEl = dataTable.append("div").attr("class", "flex bt bw2 pa2");
 
         var name = dataEl.append("div").attr("class", "pr4 w-30");

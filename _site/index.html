@@ -8,47 +8,30 @@
       rel="stylesheet"
       href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="/assets/css/style.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Crimson+Pro:200,200i,400,400i,900,900i&display=swap"
+      rel="stylesheet"
+    />
     <title>The Journalists of Color Resource Guide</title>
   </head>
-  <body class="mw8 center sans-serif">
-    <h1>The Journalists of Color Resource Guide</h1>
-    <h3>A compilation of resources for journalists looking to level up their career and the newsrooms they work in</h3>
+  <body class="mw9 center">
+    <nav>
+    <a href="/career/" />Career Growth</a> •
+    <a href="/salary/" />Salary & Benefits</a> •
+    <a href="/accountability/" />Holding Institutions Accountable</a> •
+    <a href="/training/" />Training</a> •
+    <a href="/about/" />About</a> •
+  </nav>
+<h1>The Journalists of Color Resource Guide</h1>
+<h3>A compilation of resources for journalists looking to level up their career and the newsrooms they work in</h3>
 
-    <div class="data-table mt5"></div>
+
+    <div class="content"></div>
+    <h1>FOOTER</h1>
+
   </body>
-
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
-  <script type="text/javascript">
-    var publicSpreadsheetUrl =
-      "https://docs.google.com/spreadsheets/d/1dxl6MC1NChP-vCHZaWuQZ2sJZf_jeTRtRhCCVybbYZU/edit?usp=sharing";
-
-    function init() {
-      Tabletop.init({
-        key: publicSpreadsheetUrl,
-        callback: showInfo,
-        simpleSheet: true
-      });
-    }
-
-    function showInfo(data, tabletop) {
-      console.log("data", data);
-      var dataTable = d3.select(".data-table");
-      data.map(function(d) {
-        var dataEl = dataTable.append("div").attr("class", "flex bt bw2 pa2");
-
-        var name = dataEl.append("div").attr("class", "pr4 w-30");
-        name
-          .append("a")
-          .text(d.name)
-          .attr("href", d.link)
-          .attr("class", "link");
-
-        var desc = dataEl.append("div").attr("class", "w-70");
-        desc.text(d.description);
-      });
-    }
-
-    window.addEventListener("DOMContentLoaded", init);
-  </script>
 </html>

@@ -18,14 +18,16 @@
     />
     <title>{{ site.title }}</title>
   </head>
-  <body class="mw9 center">
-    {% include header.html %}
-    <h4>{{ page.title }}</h4>
-    <p>{{ content }}</p>
+  <body class="mw9 pa3 center f1-l f3-m f4">
+    {% include header.html %} {% if page.title %}
+    <h1>{{ page.title }}</h1>
+    {% endif %}
+    {{ content }}
     <div class="data-table mt5"></div>
     {% include footer.html %}
   </body>
 
+  {% if page.data_category %}
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
   <script type="text/javascript">
@@ -47,7 +49,9 @@
       );
       var dataTable = d3.select(".data-table");
       filtered_data.map(function(d) {
-        var dataEl = dataTable.append("div").attr("class", "flex bt bw2 pa2");
+        var dataEl = dataTable
+          .append("div")
+          .attr("class", "flex bt bw2 pa4-l pa2");
 
         var name = dataEl.append("div").attr("class", "pr4 w-30");
         name
@@ -63,4 +67,5 @@
 
     window.addEventListener("DOMContentLoaded", init);
   </script>
+  {% endif %}
 </html>

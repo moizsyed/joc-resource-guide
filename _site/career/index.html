@@ -18,25 +18,51 @@
     />
     <title>The Journalists of Color Resource Guide</title>
   </head>
-  <body class="mw9 center">
-    <nav>
-    <a href="/career/" />Career Growth</a> •
-    <a href="/salary/" />Salary & Benefits</a> •
-    <a href="/accountability/" />Holding Institutions Accountable</a> •
-    <a href="/training/" />Training</a> •
-    <a href="/about/" />About</a> •
+  <body class="mw9 pa3 center f1-l f3-m f4">
+    <header class="pt3 f3">
+  <nav class="list pl0 di">
+    
+    <a href="/about/">About</a>
+    •  
+    <a href="/career/">Career Growth</a>
+    •  
+    <a href="/salary/">Salary & Benefits</a>
+    •  
+    <a href="/accountability/">Holding Institutions Accountable</a>
+    •  
+    <a href="/training/">Training</a>
+     
   </nav>
-<h1>The Journalists of Color Resource Guide</h1>
-<h3>A compilation of resources for journalists looking to level up their career and the newsrooms they work in</h3>
+  <a class="project-name" href="/">
+    <div class="mt3">
+      <div class="f1-l f1-m f2 fw7">The Journalists of Color Resource Guide</div>
+      
+      <div class="desc">
+        A compilation of resources for journalists looking to level up their career and the newsrooms they work in.
+      </div>
+      
+    </div>
+  </a>
+</header>
+ 
+    <h1>Career Growth</h1>
+    
+    <p>Feeling somewhat stuck in your current situation? Whether you’re looking for peers who could help you brainstorm how to handle a certain situation; a conference where you can network with peers; or want to participate in any mentorship programs — <a href="https://wegotyall.com">we got y’all</a> (I mean, find some good stuff below!).</p>
 
-    <h4>Career Growth</h4>
-    <p><p>Feeling somewhat stuck in your current situation? Whether you’re looking for peers who could help you brainstorm how to handle a certain situation; a conference where you can network with peers; or want to participate in any mentorship programs — <a href="https://wegotyall.com">we got y’all</a> (I mean, find some good stuff below!).</p>
-</p>
     <div class="data-table mt5"></div>
-    <h1>FOOTER</h1>
+    <footer class="mt6 f3">
+  <hr />
+
+  Created by <a href="https://twitter.com/lamthuyvo">Lam Thuy Vo</a>,
+  <a href="https://twitter.com/Disha_RC">Disha Raychaudhuri</a> and
+  <a href="https://twitter.com/MoizSyed">Moiz Syed</a> with support from
+  <a href="http://newsintegrity.com">The News Integrity Initiative</a> at the
+  Craig Newmark Graduate School of Journalism at CUNY.
+</footer>
 
   </body>
 
+  
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
   <script type="text/javascript">
@@ -58,7 +84,9 @@
       );
       var dataTable = d3.select(".data-table");
       filtered_data.map(function(d) {
-        var dataEl = dataTable.append("div").attr("class", "flex bt bw2 pa2");
+        var dataEl = dataTable
+          .append("div")
+          .attr("class", "flex bt bw2 pa4-l pa2");
 
         var name = dataEl.append("div").attr("class", "pr4 w-30");
         name
@@ -74,4 +102,5 @@
 
     window.addEventListener("DOMContentLoaded", init);
   </script>
+  
 </html>

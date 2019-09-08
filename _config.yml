@@ -21,7 +21,7 @@
 title: The Journalists of Color Resource Guide
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A compilation of resources for journalists looking to level up their career and the newsrooms they work in
+  A compilation of resources for journalists looking to level up their career and the newsrooms they work in.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:

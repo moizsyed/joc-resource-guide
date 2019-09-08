@@ -3,7 +3,50 @@
 
 $font-stack: "Crimson Pro", serif;
 $primary-color: #333;
+
+$bg: #ecc8af;
+$primary-color: #444054;
+$accent-color: #e94f37;
+
+$color1: rgba(207, 219, 213, 1);
+$color2: rgba(232, 237, 223, 1);
+$color4: rgba(36, 36, 35, 1);
+
 body {
   font: 100% $font-stack;
   color: $primary-color;
+  background-color: $bg;
+}
+
+a {
+  color: $accent-color;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.project-name {
+  text-decoration: none;
+}
+
+a .desc {
+  color: $primary-color;
+}
+
+hr {
+  border: 3px solid #e94f37;
+}
+
+h1 {
+  margin: 0.6em 0 0 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+.bg-big-btn:hover {
+  background-color: #f7b32b;
 }

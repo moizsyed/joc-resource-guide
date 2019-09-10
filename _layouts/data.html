@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Crimson+Pro:200,200i,400,400i,900,900i&display=swap"
+      rel="stylesheet"
+    />
+    <title>{{ site.title }}</title>
+  </head>
+  <body class="mw9 pa3 center f1-l f3-m f4">
+    {% include header.html %} {% if page.title %}
+    <h1>{{ page.title }}</h1>
+    {% endif %}
+    {{ content }}
+    <div class="data-table mt5"></div>
+    {% include footer.html %}
+  </body>
+
+  {% if page.data_category %}
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
+  <script type="text/javascript">
+    var publicSpreadsheetUrl =
+      "https://docs.google.com/spreadsheets/d/1dxl6MC1NChP-vCHZaWuQZ2sJZf_jeTRtRhCCVybbYZU/edit?usp=sharing";
+
+    function init() {
+      Tabletop.init({
+        key: publicSpreadsheetUrl,
+        callback: showInfo,
+        simpleSheet: true
+      });
+    }
+
+    function showInfo(data, tabletop) {
+      console.log("data", data);
+      var filtered_data = data.filter(
+        d => d.category == "{{ page.data_category }}"
+      );
+      var dataTable = d3.select(".data-table");
+      filtered_data.map(function(d) {
+        var dataEl = dataTable
+          .append("div")
+          .attr("class", "flex bt bw2 pa4-l pa2");
+
+        var name = dataEl.append("div").attr("class", "pr4 w-30");
+        name
+          .append("a")
+          .text(d.name)
+          .attr("href", d.link)
+          .attr("class", "link");
+
+        var desc = dataEl.append("div").attr("class", "w-70");
+        desc.text(d.description);
+      });
+    }
+
+    window.addEventListener("DOMContentLoaded", init);
+  </script>
+  {% endif %}
+</html>

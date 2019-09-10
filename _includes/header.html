@@ -1,0 +1,17 @@
+<header class="pt3 f3">
+  <nav class="list pl0 di">
+    {% for item in site.data.navigation.pages %}
+    <a href="{{ item.url }}">{{ item.title }}</a>
+    {% if forloop.last %}{% else %}• {% endif %} {% endfor %}
+  </nav>
+  <a class="project-name" href="/">
+    <div class="mt3">
+      <div class="f1-l f1-m f2 fw7">{{ site.title }}</div>
+      {% if page.url == "/" %} {% else %}
+      <div class="desc">
+        {{ site.description }}
+      </div>
+      {% endif %}
+    </div>
+  </a>
+</header>

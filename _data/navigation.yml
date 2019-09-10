@@ -1,0 +1,16 @@
+pages_list: Site Navigation
+pages:
+  - title: About
+    url: /about/
+
+  - title: Career Growth
+    url: /career/
+
+  - title: Salary & Benefits
+    url: /salary/
+
+  - title: Holding Institutions Accountable
+    url: /accountability/
+
+  - title: Training
+    url: /training/

@@ -53,3 +53,5 @@ plugins:
 sass:
   style: compressed # possible values: nested expanded compact compressed
 
+baseurl: /joc
+permalink: pretty

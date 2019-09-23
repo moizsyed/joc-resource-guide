@@ -18,11 +18,11 @@
     />
     <title>{{ site.title }}</title>
   </head>
-  <body class="mw9 pa3 center f1-l f3-m f4">
+  <body class="mw9 center f1-l f3-m f4">
     {% include header.html %} {% if page.title %}
-    <h1>{{ page.title }}</h1>
+    <h1 class="ph3">{{ page.title }}</h1>
     {% endif %}
-    {{ content }}
+    <div class="content ph3">{{ content }}</div>
     <div class="data-table mt5"></div>
     {% include footer.html %}
   </body>
@@ -47,22 +47,44 @@
       var filtered_data = data.filter(
         d => d.category == "{{ page.data_category }}"
       );
+
       var dataTable = d3.select(".data-table");
-      filtered_data.map(function(d) {
-        var dataEl = dataTable
-          .append("div")
-          .attr("class", "flex bt bw2 pa4-l pa2");
 
-        var name = dataEl.append("div").attr("class", "pr4 w-30");
-        name
-          .append("a")
-          .text(d.name)
+      let subcategories = [...new Set(filtered_data.map(item => item.subcategory))];
+      console.log(subcategories);
+
+      subcategories.map(function(sc) {
+        var filtered_by_subcategory = filtered_data.filter(
+          d => d.subcategory == sc
+        )
+
+        var blockDiv = dataTable.append("div").attr("class", sc + " subcategory mb5")
+        blockDiv.append("h2").text(sc).attr("class", "ph3 ttc mv2");
+
+        filtered_by_subcategory.map(function(d) {
+
+        var anchorEl = blockDiv.append("a")
           .attr("href", d.link)
-          .attr("class", "link");
+          .attr("class", "link dataTableLink");
 
-        var desc = dataEl.append("div").attr("class", "w-70");
+        var dataEl = anchorEl
+          .append("div")
+          .attr("class", "flex bt bw1 pa3");
+        
+        var name = dataEl.append("div").attr("class", "arrow-name pr5 w-40");
+        name
+          .append("p")
+          .text(d.name)
+          .attr("class", "accent-color f2-l f3")
+
+        var desc = dataEl.append("div").attr("class", "w-60 f2-l f3");
         desc.text(d.description);
       });
+
+
+      })
+      
+      
     }
 
     window.addEventListener("DOMContentLoaded", init);

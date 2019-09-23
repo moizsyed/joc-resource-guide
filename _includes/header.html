@@ -1,17 +1,20 @@
-<header class="pt3 f3">
-  <nav class="list pl0 di">
-    {% for item in site.data.navigation.pages %}
-    <a href="{{ item.url }}">{{ item.title }}</a>
-    {% if forloop.last %}{% else %}• {% endif %} {% endfor %}
-  </nav>
-  <a class="project-name" href="/">
-    <div class="mt3">
-      <div class="f1-l f1-m f2 fw7">{{ site.title }}</div>
+<header class="f3 flex flex-row-l flex-column mt3 ml3 mr3">
+  <a class="project-name w-40-l mr1-l" href="/">
+    <div class="">
+      <div class="f3-l f3-m f4 fw7">{{ site.title }}</div>
       {% if page.url == "/" %} {% else %}
-      <div class="desc">
+      <div class="desc mw6-l f4">
         {{ site.description }}
       </div>
       {% endif %}
     </div>
   </a>
+  <nav class="list pa0 di mt0-l mt3 f3-l f3-m f4">
+    {% for item in site.data.navigation.pages %}
+    <span class="nav-link pv2"><a href="{{ item.url }}">{{ item.title }}</a> </span>
+    {% if forloop.last %}
+      {% else %}&nbsp;•&nbsp;
+    {% endif %} 
+    {% endfor %}
+  </nav>
 </header>

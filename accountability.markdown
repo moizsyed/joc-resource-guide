@@ -1,6 +1,6 @@
 ---
 layout: data
-title: Holding Institutions Accountable
+title: Accountability
 data_category: accountability
 permalink: /accountability/
 ---

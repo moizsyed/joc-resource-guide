@@ -1,5 +1,8 @@
 <hr />
 <footer class="ph3 pb3 f4">
+    {% unless page.url == "/" %}
+    <p>{{ site.description }} </p>
+    {% endunless %}
   Created by <a href="https://twitter.com/lamthuyvo">Lam Thuy Vo</a>,
   <a href="https://twitter.com/Disha_RC">Disha Raychaudhuri</a> and
   <a href="https://twitter.com/MoizSyed">Moiz Syed</a> with support from

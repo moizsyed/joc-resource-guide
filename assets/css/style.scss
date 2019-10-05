@@ -67,6 +67,13 @@ p {
   margin-top: 0;
 }
 
+.bg-big-btn {
+  color: $bg;
+  transition: color .15s ease-in-out;
+  transition: background-color .15s ease-in-out;
+
+}
+
 .bg-big-btn:hover {
   color: $accent-color;
   background-color: $accent-color2;
@@ -76,9 +83,6 @@ p {
   border-bottom: 2px solid $primary-color;
 }
 
-.bg-big-btn {
-  color: $accent-color2;
-}
 .bg-accent-color {
-  background-color: $primary-color;
+  background-color: $accent-color;
 }

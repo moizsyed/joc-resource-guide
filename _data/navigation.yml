@@ -1,8 +1,6 @@
 pages_list: Site Navigation
 pages:
-  - title: About
-    url: /joc/about/
-
+  
   - title: Career Growth
     url: /joc/career/
 
@@ -14,3 +12,6 @@ pages:
 
   - title: Training
     url: /joc/training/
+
+  - title: About
+    url: /joc/about/

@@ -5,4 +5,7 @@ data_category: career_growth
 permalink: /career/
 ---
 
-Feeling somewhat stuck in your current situation? Whether you’re looking for peers who could help you brainstorm how to handle a certain situation; a conference where you can network with peers; or want to participate in any mentorship programs — [we got y’all](https://wegotyall.com) (I mean, find some good stuff below!).
+Are you feeling somewhat stuck in your current situation? One of the biggest concerns that Journalists of Color have voiced to us is a desire to push their careers forward through mentorship and peer support. 
+ 
+Whether you’re looking for peers who could help you brainstorm how to handle a certain situation; a conference where you can network with peers; or want to participate in any mentorship programs — please find a number of programs and organizations that can help you further your career.    
+

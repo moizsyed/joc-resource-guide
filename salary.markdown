@@ -5,4 +5,7 @@ data_category: salary
 permalink: /salary/
 ---
 
-Have you ever found yourself wondering whether you’re asking for too much money? Or not enough? What about benefits… would it be too much to ask for… uhm… health insurance? (No! Keep asking!) If you want to find salary data (including some breakdowns by race) and learn about some good negotiation tactics, the resources below can help!
+Women and minorities in news are [likely to be paid](https://www.cjr.org/business_of_news/women-minorities-salary-newsrooms.php) less than their white and male counterparts and some of the most powerful tools for a journalist of color working towards closing that gap for themselves are hard data, studies, and negotiation tactics. 
+ 
+For those looking to find these kinds of resources that can help you smarten up.
+

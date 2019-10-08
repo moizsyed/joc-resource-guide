@@ -4,10 +4,10 @@
 $font-stack: "Crimson Pro", serif;
 $primary-color: #333;
 
-$bg: #D9BEB4;
-$primary-color: #413C58;
-$accent-color: #99447B;
-$accent-color2: #BACFDA;
+$bg: #E2DFDE;
+$primary-color: #63514C;
+$accent-color: #453F78;
+$accent-color2: #F4CB64;
 
 $color1: rgba(207, 219, 213, 1);
 $color2: rgba(232, 237, 223, 1);
@@ -27,10 +27,15 @@ body {
   color: $accent-color;
 }
 
+.b--accent-color {
+  border-color: $accent-color;
+}
+
 a {
   color: $accent-color;
   text-decoration: none;
 }
+
 a.dataTableLink{
   color: $primary-color;
   text-decoration: none;
@@ -59,12 +64,28 @@ hr {
   border: 2px solid $accent-color;
 }
 
+h1, h2, h3 {
+  font-family: 'Alfa Slab One', sans-serif;
+  letter-spacing: 0.0225em;
+  line-height: 1;
+  padding-bottom: .25em;
+  padding-top: .3em;
+}
+
 h1 {
   margin: 0.6em 0 0 0;
 }
 
 p {
   margin-top: 0;
+}
+
+p > a:hover, .nav-link > a:hover {
+  text-decoration: underline;
+}
+
+a.bg-big-btn:hover {
+  text-decoration: none;
 }
 
 .bg-big-btn {

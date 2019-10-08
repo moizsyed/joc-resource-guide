@@ -1,6 +1,6 @@
 {% unless page.url == "/" %}
 <header class="f3 flex flex-row-l flex-column mt3 ml3 mr3">
-  <a class="project-name w-40-l mr1-l" href="/">
+  <a class="project-name w-40-l mr1-l" href="/joc/">
     <div class="pr4">
       <div class="f4 fw7 mb2">{{ site.title }}</div>
       <!-- <div class="desc mw6-l f4">
@@ -9,7 +9,7 @@
     </div>
   </a>
   
-  <nav class="list pa0 di mt0-l mt3 f4">
+  <nav class="list pa0 di mt0-l f4">
     {% for item in site.data.navigation.pages %}
     <span class="nav-link pv2"><a href="{{ item.url }}">{{ item.title }}</a> </span>
     {% if forloop.last %}

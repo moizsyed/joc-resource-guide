@@ -16,6 +16,14 @@
       href="https://fonts.googleapis.com/css?family=Crimson+Pro:200,200i,400,400i,900,900i&display=swap"
       rel="stylesheet"
     />
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <meta property="og:title" content="The Journalists of Color Resource Guide">
+    <meta property="og:site_name" content="The Journalists of Color Resource Guide">
+    <meta property="og:url" content="jocresources.com">
+    <meta property="og:description" content="A compilation of resources for journalists looking to level up their career and the newsrooms they work in.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://www.moiz.ca/joc/assets/og.png">
+
     <title>{{ site.title }}</title>
   </head>
   <body class="mw8 center f2-l f3-m f4">
@@ -69,15 +77,15 @@
 
         var dataEl = anchorEl
           .append("div")
-          .attr("class", "flex bt bw1 pa3");
+          .attr("class", "flex flex-row-l flex-row-m flex-column bt bw1 pa3");
         
-        var name = dataEl.append("div").attr("class", "arrow-name pr5 w-40");
+        var name = dataEl.append("div").attr("class", "arrow-name pr5 w-40-l w-40-m w-100");
         name
           .append("p")
           .text(d.name)
-          .attr("class", "accent-color f3-l f4")
+          .attr("class", "accent-color f3-l f4 fw9")
 
-        var desc = dataEl.append("div").attr("class", "w-60 f3-l f4");
+        var desc = dataEl.append("div").attr("class", "w-60-l w-60-m w-100 f3-l f4");
         desc.text(d.description);
       });
 

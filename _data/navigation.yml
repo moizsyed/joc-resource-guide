@@ -2,16 +2,16 @@ pages_list: Site Navigation
 pages:
   
   - title: Career Growth
-    url: /joc/career/
+    url: /career/
 
   - title: Salary & Benefits
-    url: /joc/salary/
+    url: /salary/
 
   - title: Accountability
-    url: /joc/accountability/
+    url: /accountability/
 
   - title: Training
-    url: /joc/training/
+    url: /training/
 
   - title: About
-    url: /joc/about/
+    url: /about/

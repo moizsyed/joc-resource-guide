@@ -22,7 +22,7 @@ title: The Journalists of Color Resource Guide
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   A compilation of resources for journalists looking to level up their career and the newsrooms they work in.
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://jocresources.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username:
 github_username:
 
@@ -52,5 +52,5 @@ plugins:
 sass:
   style: compressed # possible values: nested expanded compact compressed
 
-baseurl: /joc
+baseurl: ""
 permalink: pretty

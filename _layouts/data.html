@@ -73,7 +73,8 @@
 
         var anchorEl = blockDiv.append("a")
           .attr("href", d.link)
-          .attr("class", "link dataTableLink");
+          .attr("class", "link dataTableLink")
+          .attr("target", "_blank");
 
         var dataEl = anchorEl
           .append("div")

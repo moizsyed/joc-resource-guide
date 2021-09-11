@@ -61,7 +61,7 @@
     var dataTable = d3.select(".data-table");
 
     let subcategories = [...new Set(filtered_data.map(item => item.subcategory))];
-    console.log(subcategories);
+    // console.log(subcategories);
 
     subcategories.map(function (sc) {
       var filtered_by_subcategory = filtered_data.filter(

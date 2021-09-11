@@ -1,75 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ '/assets/css/style.css' | relative_url }}"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Crimson+Pro:200,200i,400,400i,900,900i&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-    <meta property="og:title" content="The Journalists of Color Resource Guide">
-    <meta property="og:site_name" content="The Journalists of Color Resource Guide">
-    <meta property="og:url" content="jocresources.com">
-    <meta property="og:description" content="A compilation of resources for journalists looking to level up their career and the newsrooms they work in.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="http://www.moiz.ca/joc/assets/og.png">
 
-    <title>{{ site.title }}</title>
-  </head>
-  <body class="mw8 center f2-l f3-m f4">
-    {% include header.html %} {% if page.title %}
-    <h1 class="ph3">{{ page.title }}</h1>
-    {% endif %}
-    <div class="content ph3">{{ content }}</div>
-    <div class="data-table mt5"></div>
-    {% include footer.html %}
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css" />
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Pro:200,200i,400,400i,900,900i&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+  <meta property="og:title" content="The Journalists of Color Resource Guide">
+  <meta property="og:site_name" content="The Journalists of Color Resource Guide">
+  <meta property="og:url" content="jocresources.com">
+  <meta property="og:description"
+    content="A compilation of resources for journalists looking to level up their career and the newsrooms they work in.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="http://www.moiz.ca/joc/assets/og.png">
 
-  {% if page.data_category %}
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js"></script>
-  <script type="text/javascript">
-    var publicSpreadsheetUrl =
-      "https://docs.google.com/spreadsheets/d/1dxl6MC1NChP-vCHZaWuQZ2sJZf_jeTRtRhCCVybbYZU/edit?usp=sharing";
+  <title>{{ site.title }}</title>
+</head>
 
-    function init() {
-      Tabletop.init({
-        key: publicSpreadsheetUrl,
-        callback: showInfo,
-        simpleSheet: true
-      });
-    }
+<body class="mw8 center f2-l f3-m f4">
+  {% include header.html %} {% if page.title %}
+  <h1 class="ph3">{{ page.title }}</h1>
+  {% endif %}
+  <div class="content ph3">{{ content }}</div>
+  <div class="data-table mt5"></div>
+  {% include footer.html %}
+</body>
 
-    function showInfo(data, tabletop) {
-      console.log("data", data);
-      var filtered_data = data.filter(
-        d => d.category == "{{ page.data_category }}"
-      );
+{% if page.data_category %}
+<script src="https://d3js.org/d3.v5.min.js"></script>
 
-      var dataTable = d3.select(".data-table");
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.1/papaparse.min.js"></script>
+<script type="text/javascript">
+  var publicSpreadsheetUrl =
+    "https://docs.google.com/spreadsheets/d/1dxl6MC1NChP-vCHZaWuQZ2sJZf_jeTRtRhCCVybbYZU/pub?output=csv";
 
-      let subcategories = [...new Set(filtered_data.map(item => item.subcategory))];
-      console.log(subcategories);
+  function init() {
+    Papa.parse(publicSpreadsheetUrl, {
+      download: true,
+      header: true,
+      complete: function (results) {
+        var data = results.data
+        // console.log(data)
+        showInfo(data)
+      }
+    });
+  }
 
-      subcategories.map(function(sc) {
-        var filtered_by_subcategory = filtered_data.filter(
-          d => d.subcategory == sc
-        )
+  window.addEventListener('DOMContentLoaded', init)
 
-        var blockDiv = dataTable.append("div").attr("class", sc + " subcategory mb5")
-        blockDiv.append("h2").text(sc).attr("class", "ph3 ttc mv2");
+  function showInfo(data) {
+    // console.log("data", data);
+    var filtered_data = data.filter(
+      d => d.category == "{{ page.data_category }}"
+    );
 
-        filtered_by_subcategory.map(function(d) {
+    var dataTable = d3.select(".data-table");
+
+    let subcategories = [...new Set(filtered_data.map(item => item.subcategory))];
+    console.log(subcategories);
+
+    subcategories.map(function (sc) {
+      var filtered_by_subcategory = filtered_data.filter(
+        d => d.subcategory == sc
+      )
+
+      var blockDiv = dataTable.append("div").attr("class", sc + " subcategory mb5")
+      blockDiv.append("h2").text(sc).attr("class", "ph3 ttc mv2");
+
+      filtered_by_subcategory.map(function (d) {
 
         var anchorEl = blockDiv.append("a")
           .attr("href", d.link)
@@ -79,7 +81,7 @@
         var dataEl = anchorEl
           .append("div")
           .attr("class", "flex flex-row-l flex-row-m flex-column bt bw1 pa3");
-        
+
         var name = dataEl.append("div").attr("class", "arrow-name pr5 w-40-l w-40-m w-100");
         name
           .append("p")
@@ -91,12 +93,13 @@
       });
 
 
-      })
-      
-      
-    }
+    })
 
-    window.addEventListener("DOMContentLoaded", init);
-  </script>
-  {% endif %}
+
+  }
+
+  window.addEventListener("DOMContentLoaded", init);
+</script>
+{% endif %}
+
 </html>

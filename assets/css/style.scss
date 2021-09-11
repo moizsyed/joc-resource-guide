@@ -4,10 +4,10 @@
 $font-stack: "Crimson Pro", serif;
 $primary-color: #333;
 
-$bg: #E2DFDE;
-$primary-color: #63514C;
-$accent-color: #453F78;
-$accent-color2: #F4CB64;
+$bg: #e2dfde;
+$primary-color: #63514c;
+$accent-color: #453f78;
+$accent-color2: #f4cb64;
 
 $color1: rgba(207, 219, 213, 1);
 $color2: rgba(232, 237, 223, 1);
@@ -19,12 +19,19 @@ body {
   background-color: $bg;
 }
 
+.bg {
+  color: $bg;
+}
 .primary-color {
   color: $primary-color;
 }
 
 .accent-color {
   color: $accent-color;
+}
+
+.accent-color2 {
+  color: $accent-color2;
 }
 
 .b--accent-color {
@@ -36,21 +43,19 @@ a {
   text-decoration: none;
 }
 
-a.dataTableLink{
+a.dataTableLink {
   color: $primary-color;
   text-decoration: none;
 }
 
-
-a.dataTableLink:hover{
+a.dataTableLink:hover {
   background-color: $accent-color2;
   text-decoration: none;
 }
 
-a.dataTableLink:hover div{
+a.dataTableLink:hover div {
   background-color: $accent-color2;
 }
-
 
 a.project-name {
   text-decoration: none;
@@ -64,12 +69,14 @@ hr {
   border: 2px solid $accent-color;
 }
 
-h1, h2, h3 {
-  font-family: 'Alfa Slab One', sans-serif;
+h1,
+h2,
+h3 {
+  font-family: "Alfa Slab One", sans-serif;
   letter-spacing: 0.0225em;
   line-height: 1;
-  padding-bottom: .25em;
-  padding-top: .3em;
+  padding-bottom: 0.25em;
+  padding-top: 0.3em;
 }
 
 h1 {
@@ -80,19 +87,19 @@ p {
   margin-top: 0;
 }
 
-p > a:hover, .nav-link > a:hover {
+p > a:hover,
+.nav-link > a:hover {
   text-decoration: underline;
 }
 
-a.bg-big-btn:hover {
+.bg-big-btn:hover a {
   text-decoration: none;
 }
 
 .bg-big-btn {
   color: $bg;
-  transition: color .15s ease-in-out;
-  transition: background-color .15s ease-in-out;
-
+  transition: color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
 }
 
 .bg-big-btn:hover {
@@ -100,7 +107,7 @@ a.bg-big-btn:hover {
   background-color: $accent-color2;
 }
 
-.subcategory > a:last-child > div{
+.subcategory > a:last-child > div {
   border-bottom: 2px solid $primary-color;
 }
 

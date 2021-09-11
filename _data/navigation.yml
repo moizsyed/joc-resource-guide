@@ -1,14 +1,16 @@
 pages_list: Site Navigation
 pages:
-  
+  - title: Accountability
+    url: /accountability/
+
   - title: Career Growth
     url: /career/
 
+  - title: Mental Health
+    url: /mental-health/
+
   - title: Salary & Benefits
     url: /salary/
-
-  - title: Accountability
-    url: /accountability/
 
   - title: Training
     url: /training/
